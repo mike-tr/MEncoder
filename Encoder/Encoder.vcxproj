@@ -152,6 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Encoder.cpp" />
+    <ClCompile Include="ModularEncoder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ModularEncoder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

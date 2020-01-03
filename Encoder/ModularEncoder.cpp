@@ -39,10 +39,19 @@ long ModularEncoder::powerMod(long num, int power, long base)
 
 long ModularEncoder::encode(int data_bit, int key, int base)
 {
-	return 0;
+	return CalcHugeMod(data_bit, key, base);
 }
 
 long ModularEncoder::findInverseMod(int a, int base)
 {
 	return 0;
+}
+
+long ModularEncoder::EuclidGcd(int a, int b)
+{
+	int r = a % b;
+	if (r == 0) {
+		return b;
+	}
+	return EuclidGcd(b, r);
 }

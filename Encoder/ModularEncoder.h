@@ -29,6 +29,8 @@ public:
 	static long encode(int data_bit, int key, int base);
 
 	static long findInverseMod(int a, int base);
+
+	static long EuclidGcd(int a, int b);
 private:
 	int p, q, e;
 };
