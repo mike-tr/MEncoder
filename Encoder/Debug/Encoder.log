@@ -1,2 +1,5 @@
-﻿  Encoder.cpp
+﻿  ModularEncoder.cpp
+E:\Projects\cpp\Encoder\Encoder\ModularEncoder.cpp(37,26): warning C4244:  'initializing': conversion from 'double' to 'unsigned __int64', possible loss of data
+E:\Projects\cpp\Encoder\Encoder\ModularEncoder.cpp(68,20): warning C4018:  '<': signed/unsigned mismatch
+E:\Projects\cpp\Encoder\Encoder\ModularEncoder.cpp(74,20): warning C4018:  '<': signed/unsigned mismatch
   Encoder.vcxproj -> E:\Projects\cpp\Encoder\Debug\Encoder.exe

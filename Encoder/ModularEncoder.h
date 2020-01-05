@@ -1,5 +1,8 @@
 ﻿#pragma once
 #include "math.h"
+#include <vector>
+
+using namespace std;
 
 class ModularEncoder
 {
@@ -24,7 +27,7 @@ public:
 	}
 
 	static long mp(long m, long q, long p);
-	static long CalcHugeMod(int num, int power, int base);
+	static long RecursiveMod(int num, int power, int base);
  	static long powerMod(long num, int power, long base);
 	static long encode(int data_bit, int key, int base);
 

@@ -26,12 +26,13 @@ int main()
 
 	int m = 7;
 	int dcoded = ModularEncoder::encode(m, e, n);
-	//d = 493;
+	d = 227;
 	cout << dcoded << " message : " << m << endl;
 	cout << "try e? " << ModularEncoder::encode(dcoded, e, n) << endl;
 	cout << "try d? " << ModularEncoder::encode(dcoded, d, n) << endl;
 
 	cout << ModularEncoder::EuclidGcd(252, 198) << endl;
+	cout << "inv test : " << ModularEncoder::findInverseMod(20, 172) << endl;
 	cout << ModularEncoder::EuclidGcd(19, 616) << endl;
 }
 
