@@ -1,0 +1,5 @@
+﻿  ModularEncoder.cpp
+C:\tt\MEncoder\Encoder\ModularEncoder.cpp(37,26): warning C4244: 'initializing': conversion from 'double' to 'unsigned __int64', possible loss of data
+C:\tt\MEncoder\Encoder\ModularEncoder.cpp(72,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\tt\MEncoder\Encoder\ModularEncoder.cpp(89,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Encoder.vcxproj -> C:\tt\MEncoder\x64\Debug\Encoder.exe

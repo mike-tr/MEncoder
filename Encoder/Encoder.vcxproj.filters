@@ -26,5 +26,8 @@
     <ClInclude Include="ModularEncoder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Equation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

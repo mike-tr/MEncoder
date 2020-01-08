@@ -33,6 +33,7 @@ int main()
 
 	cout << ModularEncoder::EuclidGcd(252, 198) << endl;
 	cout << "inv test : " << ModularEncoder::findInverseMod(20, 172) << endl;
+	cout << ModularEncoder::EuclidGcd(20, 172) << endl;
 	cout << ModularEncoder::EuclidGcd(19, 616) << endl;
 }
 

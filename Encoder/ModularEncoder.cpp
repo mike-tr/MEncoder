@@ -1,5 +1,5 @@
 #include "ModularEncoder.h"
-#include <iostream>
+#include "Equation.h"
 
 long ModularEncoder::mp(long m, long q, long p)
 {
@@ -47,7 +47,7 @@ long ModularEncoder::findInverseMod(int num, int base)
 {
 	vector<int> un;
 	vector<int> qn;
-	map<int, int> unk;
+	map<int, Equation> equ;
 	int a = base, b = num;
 	if (num > base) {
 		a = num;
@@ -56,7 +56,6 @@ long ModularEncoder::findInverseMod(int num, int base)
 	int r = a % b;
 	while (r != 0) {
 		un.push_back(a);
-		unk[a] = a;
 		qn.push_back((int)(a / b));
 		cout << "a : " << a << " b : " << b << endl;
 		a = b;
@@ -64,9 +63,7 @@ long ModularEncoder::findInverseMod(int num, int base)
 		r = a % b;
 	}
 	un.push_back(a);
-	unk[a] = a;
 	un.push_back(b);
-	unk[b] = b;
 	qn.push_back((int)(a / b));
 	cout << " ------------------------ " << endl;
 	for (int i = 0; i < un.size(); i++)
@@ -91,10 +88,14 @@ long ModularEncoder::findInverseMod(int num, int base)
 	cout << " ------------------------ " << endl;
 	for (int i = un.size() - 1; i > 1; i--)
 	{
-		cout << un[i] << " = " << un[i - 2] << " * " << qn[i - 2] << " - " << un[i - 1] << endl;
+		Equation *eq = new Equation(un[i], un[i - 2], qn[i - 2], un[i - 1]);
+		eq->print();
+		//equ[un[i]] = *eq;
+
+		//cout << un[i] << " = " << un[i - 2] << " * " << qn[i - 2] << " - " << un[i - 1] << endl;
+
 	}
 	cout << " ------------------------ " << endl;
-
 
 	return qn[qn.size() - 1];
 }

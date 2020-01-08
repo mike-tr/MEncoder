@@ -155,6 +155,7 @@
     <ClCompile Include="ModularEncoder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Equation.h" />
     <ClInclude Include="ModularEncoder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
