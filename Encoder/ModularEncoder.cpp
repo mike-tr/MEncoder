@@ -90,7 +90,8 @@ long ModularEncoder::findInverseMod(int num, int base)
 	{
 		Equation *eq = new Equation(un[i], un[i - 2], qn[i - 2], un[i - 1]);
 		eq->print();
-		//equ[un[i]] = *eq;
+		equ[un[i]] = *eq;
+		equ[un[i]].print();
 
 		//cout << un[i] << " = " << un[i - 2] << " * " << qn[i - 2] << " - " << un[i - 1] << endl;
 

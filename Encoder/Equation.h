@@ -4,6 +4,7 @@
 struct Equation
 {
 public:
+	Equation(){}
 	Equation(int _d, int _a, int _x0, int _r) : d(_d), a(_a), x0(_x0), r(_r) {}
 
 	void print() {
