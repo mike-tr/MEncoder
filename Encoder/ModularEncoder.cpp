@@ -99,8 +99,10 @@ long ModularEncoder::findInverseMod(int num, int base)
 	cout << " ------------------------ " << endl;
 	equ[4].print();
 	cout << " ------------------------ " << endl;
-	equ[4].Rebuild(equ).print();
-
+	Equation final = equ[4].Rebuild(equ);
+	final.print();
+	cout << " find x  for " << 1000 << " : " << final.findX0(1000) << endl;
+	cout << " find x  for " << 1000 << " : " << final.findY0(1000) << endl;
 	return qn[qn.size() - 1];
 }
 

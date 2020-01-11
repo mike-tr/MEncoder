@@ -96,6 +96,26 @@ public:
 		cout << endl;
 		return fa;
 	}
+
+	int findX0(int c) {
+		if (c % d != 0) {
+			cout << "Equation has no solution!";
+			return -1;
+		}
+		else {
+			return x0 * c / d;
+		}
+	}
+
+	int findY0(int c) {
+		if (c % d != 0) {
+			cout << "Equation has no solution!";
+			return -1;
+		}
+		else {
+			return -y0 * c / d;
+		}
+	}
 	// d = a*x0 - r
 	//d = a*x0-b*y0
 	int d, a, x0, b, y0;
