@@ -97,6 +97,9 @@ long ModularEncoder::findInverseMod(int num, int base)
 
 	}
 	cout << " ------------------------ " << endl;
+	equ[4].print();
+	cout << " ------------------------ " << endl;
+	equ[4].Rebuild(equ).print();
 
 	return qn[qn.size() - 1];
 }
