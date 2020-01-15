@@ -6,6 +6,36 @@
 
 using namespace std;
 
+string EncString(string text, int e, int n) {
+	string ret = "";
+	for (int i = 0; i < text.length(); i++)
+	{
+		int m = ModularEncoder::encode((int)text[i], e, n);
+		cout << m << " : " << (int)text[i] << endl;
+		ret += (char)ModularEncoder::encode((int)text[i], e, n);
+	}
+	return ret;
+}
+
+void testForText(int e, int d, int n) {
+	string input = "";
+	cin >> input;
+	while (!input.empty()) {
+		cout << "-------------------------------" << endl;
+
+		//int dcoded = ModularEncoder::encode(input, e, n);
+		string encoded = EncString(input, e, n);
+
+		cout << encoded << "  - Original message : " << input << endl;
+		cout << "try e? " << EncString(encoded, e, n) << endl;
+		cout << "try d? " << EncString(encoded, d, n) << endl;
+
+		cout << "-------------------------------" << endl;
+
+		cin >> input;
+	}
+}
+
 int main()
 {
 	ModularEncoder* encoder = new ModularEncoder(11, 13, 17);
@@ -15,26 +45,46 @@ int main()
 	int e = 19; //7; works!
 
 	long n = p * q;
-	long fi = (p - 1) * (q - 1);
+	long phi_n = (p - 1) * (q - 1);
 
 	cout << " p : " << p << " q : " << " n : " << n << endl;
 
 	int d = ModularEncoder::mp(e, q, p);
 
 	//cout << "test : " << mp(11, 3, 5) << endl;
-	cout << " d : " << d << " , e :" << e << " , fi :" << fi << endl;
+	cout << " d : " << d << " , e :" << e << " , fi :" << phi_n << endl;
 
 	int m = 7;
 	int dcoded = ModularEncoder::encode(m, e, n);
-	d = 227;
-	cout << dcoded << " message : " << m << endl;
-	cout << "try e? " << ModularEncoder::encode(dcoded, e, n) << endl;
-	cout << "try d? " << ModularEncoder::encode(dcoded, d, n) << endl;
+	d = ModularEncoder::findInverseMod(e, phi_n).x0; // e = 19 phi_n = 22 * 28, d = 227
 
-	cout << ModularEncoder::EuclidGcd(252, 198) << endl;
-	cout << "inv test : " << ModularEncoder::findInverseMod(20, 172) << endl;
-	cout << ModularEncoder::EuclidGcd(20, 172) << endl;
-	cout << ModularEncoder::EuclidGcd(19, 616) << endl;
+	
+	//testForText(e, d, n);
+
+	int input = 0;
+	cin >> input;
+	while (input > 0) {
+		cout << "-------------------------------" << endl;
+
+		int dcoded = ModularEncoder::encode(input, e, n);
+
+		cout << "Encoded with e : " << dcoded << " original : " << input << endl;
+		cout << "try decoding with e : " << ModularEncoder::encode(dcoded, e, n) << endl;
+		cout << "try decoding with d : " << ModularEncoder::encode(dcoded, d, n) << endl;
+
+		cout << "-------------------------------" << endl;
+
+		cin >> input;
+	}
+
+
+	//cout << ModularEncoder::EuclidGcd(252, 198) << endl;
+	//cout << "inv test : " << ModularEncoder::findInverseMod(20, 172) << endl;
+	//cout << ModularEncoder::EuclidGcd(20, 172) << endl;
+	//cout << ModularEncoder::EuclidGcd(19, 616) << endl;
+
+	//cout << "inv test : " << ModularEncoder::findInverseMod(19, phi_n) << endl;
+	//cin >> d;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

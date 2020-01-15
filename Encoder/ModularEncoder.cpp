@@ -1,5 +1,4 @@
 #include "ModularEncoder.h"
-#include "Equation.h"
 
 long ModularEncoder::mp(long m, long q, long p)
 {
@@ -43,7 +42,7 @@ long ModularEncoder::encode(int data_bit, int key, int base)
 	return RecursiveMod(data_bit, key, base);
 }
 
-long ModularEncoder::findInverseMod(int num, int base)
+Equation ModularEncoder::findInverseMod(int num, int base)
 {
 	vector<int> un;
 	vector<int> qn;
@@ -89,7 +88,7 @@ long ModularEncoder::findInverseMod(int num, int base)
 	for (int i = un.size() - 1; i > 1; i--)
 	{
 		Equation *eq = new Equation(un[i], un[i - 2], qn[i - 2], un[i - 1]);
-		eq->print();
+		//eq->print();
 		equ[un[i]] = *eq;
 		equ[un[i]].print();
 
@@ -97,13 +96,13 @@ long ModularEncoder::findInverseMod(int num, int base)
 
 	}
 	cout << " ------------------------ " << endl;
-	equ[4].print();
+	equ[b].print();
 	cout << " ------------------------ " << endl;
-	Equation final = equ[4].Rebuild(equ);
+	Equation final = equ[b].Rebuild(equ);
 	final.print();
-	cout << " find x  for " << 1000 << " : " << final.findX0(1000) << endl;
-	cout << " find x  for " << 1000 << " : " << final.findY0(1000) << endl;
-	return qn[qn.size() - 1];
+	//cout << " find x  for " << 1000 << " : " << final.findX0(1000) << endl;
+	//cout << " find x  for " << 1000 << " : " << final.findY0(1000) << endl;
+	return final;
 }
 
 long ModularEncoder::EuclidGcd(int a, int b)

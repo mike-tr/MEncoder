@@ -4,6 +4,8 @@
 #include <map>
 #include <iostream>
 
+#include "Equation.h"
+
 using namespace std;
 
 class ModularEncoder
@@ -33,7 +35,7 @@ public:
  	static long powerMod(long num, int power, long base);
 	static long encode(int data_bit, int key, int base);
 
-	static long findInverseMod(int a, int base);
+	static Equation findInverseMod(int a, int base);
 
 	static long EuclidGcd(int a, int b);
 private:
